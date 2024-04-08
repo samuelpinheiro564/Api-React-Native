@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
+  },map: {
+    height: "60%",
+    width: "100%",
   },
 });
 export default styles;
