@@ -7,6 +7,7 @@ import {requestForegroundPermissionsAsync, getCurrentPositionAsync,watchPosition
 import { AnimatedMapView } from "react-native-maps/lib/MapView";
 import { MarkerAnimated } from "react-native-maps";
 import { LocationAccuracy } from "expo-location"; 
+import { ActivityIndicator } from "react-native-web";
 
 
 
@@ -73,15 +74,16 @@ const getWeather = async (latitude, longitude) => {
           <Text>Temperatura: {weather.current.temp/10}°C</Text>
         </View>
       ):(
-        <Text>Carregando dados do clima...</Text>
+   <ActivityIndicator size="large"/>
       
       )}
+      {errorMsg && <Text>{errorMsg}</Text>}
 
-      {location && (
+    {location && (
   <AnimatedMapView
-  ref={mapRef}
-    style={styles.map}
-    initialRegion={{
+      ref={mapRef}
+      style={styles.map}
+      initialRegion={{
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
       latitudeDelta: 0.005,
