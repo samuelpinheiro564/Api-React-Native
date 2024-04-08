@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },map: {
-    height: "60%",
+    height: "90%",
     width: "100%",
   },
 });
